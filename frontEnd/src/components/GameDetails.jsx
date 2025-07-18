@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Typography,
@@ -22,8 +22,33 @@ import {
   Grid4x4,
   HelpOutline,
 } from "@mui/icons-material";
+import StartGame from "../store/Options";
+import startGame from "../store/Options";
 
 export default function GameDetails() {
+    const [tabvalue, setTabValue] = useState(0);
+    const handleChange = async (event, newValue) => {
+      setTabValue(newValue);
+      switch (newValue) {
+        case 0:
+            console.log("Plaring");
+          break;
+        case 1:
+            const player1 = "Player1";
+            const player2 = "Player2";
+            const gameId = "game123";
+          const newGame = await startGame(player1, player2, gameId);
+          break;
+        case 2:
+          // Handle Games tab
+          break;
+        case 3:
+          // Handle Players tab
+          break;
+        default:
+          break;
+      }
+    }
   const moveList = [
     ["d4", "d5"],
     ["e4", "♝g4"],
@@ -50,7 +75,7 @@ export default function GameDetails() {
       }}
       elevation={5}
     >
-      <Tabs value={0} variant="fullWidth" textColor="inherit" sx={{ minHeight: 48 }}>
+      <Tabs onChange={handleChange} value={0} variant="fullWidth" textColor="inherit" sx={{ minHeight: 48 }}>
         <Tab icon={<SportsEsports />} label="Play" />
         <Tab icon={<Add />} label="New Game" />
         <Tab icon={<Grid4x4 />} label="Games" />

@@ -1,12 +1,13 @@
-import { Chess } from 'chess.js';
-//doing frontend first and then the backend
-const chess = new Chess()
+import express, { json } from "express";
+import cors from "cors";
+const app = express();
+import mongoose from "mongoose";
+import chessRouter from "./routes/ChessRouter.js";
 
-while (!chess.game_over()) {
-    const moves = chess.moves()
-    console.log("Moves",moves);
-    const move = moves[Math.floor(Math.random() * moves.length)]
-    chess.move("Move",move);
-}
-console.log("Png");
-console.log(chess.pgn())
+app.use(cors());
+app.use(json());
+
+app.use("/Chess", chessRouter);
+
+
+app.listen(8080,()=>{console.log("Serve is running on port 8080")});

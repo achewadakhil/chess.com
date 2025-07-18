@@ -11,22 +11,15 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 
 export default function Navbar() {
-    // 3b7b45ff
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#3b7b45ff " }}>
+    <AppBar position="static" sx={{ backgroundColor: "#3b7b45ff "}}>
       <Toolbar>
-        {/*  */}
-        {/* Logo or Menu Icon */}
         <IconButton edge="start" color="inherit" sx={{ mr: 2 }}>
           <MenuIcon />
         </IconButton>
-
-        {/* Title */}
-        <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: "bold" }}>
-          Chess.com Clone
+        <Typography variant="h4" sx={{ flexGrow: 1, fontWeight: "bold" }}>
+          Chess
         </Typography>
-
-        {/* Navigation Buttons */}
         <Box sx={{ display: { xs: "none", sm: "block" } }}>
           <Button color="inherit" sx={{ mx: 1 }}>
             Home

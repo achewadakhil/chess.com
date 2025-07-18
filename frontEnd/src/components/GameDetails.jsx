@@ -50,7 +50,6 @@ export default function GameDetails() {
       }}
       elevation={5}
     >
-      {/* Tabs */}
       <Tabs value={0} variant="fullWidth" textColor="inherit" sx={{ minHeight: 48 }}>
         <Tab icon={<SportsEsports />} label="Play" />
         <Tab icon={<Add />} label="New Game" />
@@ -58,7 +57,6 @@ export default function GameDetails() {
         <Tab icon={<Person />} label="Players" />
       </Tabs>
 
-      {/* Opening Info */}
       <Box p={1} px={2} display="flex" alignItems="center" gap={1}>
         <Typography variant="subtitle2" color="grey.400">
           Queen's Pawn Opening: Blackmar Gambit
@@ -66,7 +64,6 @@ export default function GameDetails() {
         <HelpOutline sx={{ fontSize: 16, color: "gray" }} />
       </Box>
 
-      {/* Move History */}
       <Box
         flex={1}
         overflow="auto"
@@ -90,7 +87,6 @@ export default function GameDetails() {
         ))}
       </Box>
 
-      {/* Controls */}
       <Box px={2} py={1}>
         <Divider sx={{ borderColor: "#444" }} />
         <Stack direction="row" spacing={1} mt={1}>
@@ -127,7 +123,6 @@ export default function GameDetails() {
         </Stack>
       </Box>
 
-      {/* Bottom Game Info */}
       <Box mt="auto" p={2} bgcolor="#2a2a2a">
         <Typography variant="subtitle2" fontWeight="bold">
           NEW GAME

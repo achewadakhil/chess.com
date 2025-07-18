@@ -12,7 +12,6 @@ export default function ChessBoard() {
         width: '100%',
       }}
     >
-      {/* Top section for Player 1 (e.g., White) name, rating, photo, and time */}
       <Box
         sx={{
           p: 0.8,
@@ -36,12 +35,10 @@ export default function ChessBoard() {
         </Box>
       </Box>
 
-      {/* The actual Chessboard */}
       <Box sx={{ width: '100%', maxWidth: '500px' }}>
         <Chessboard />
       </Box>
 
-      {/* Bottom section for Player 2 (e.g., Black) name, rating, photo, and time */}
       <Box
         sx={{
           p: 0.8,

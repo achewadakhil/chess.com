@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express, { json } from "express";
 import cors from "cors";
 const app = express();
@@ -9,5 +11,10 @@ app.use(json());
 
 app.use("/Chess", chessRouter);
 
+(async ()=>{
+    await mongoose.connect(process.env.MONGO_URL)
+    .then(()=>console.log("Connected to MongoDB"))
+    .catch((err)=>console.error("Error connecting to MongoDB:", err));
 
-app.listen(8080,()=>{console.log("Serve is running on port 8080")});
+    app.listen(process.env.PORT,()=>console.log(`Server running on port ${process.env.PORT}`));
+})();   

@@ -31,13 +31,13 @@ export default function GameDetails() {
       setTabValue(newValue);
       switch (newValue) {
         case 0:
-            console.log("Plaring");
+            console.log("Playing");
           break;
         case 1:
             const player1 = "Player1";
             const player2 = "Player2";
             const gameId = "game123";
-          const newGame = await startGame(player1, player2, gameId);
+            const newGame = await startGame(player1, player2, gameId);
           break;
         case 2:
           // Handle Games tab
